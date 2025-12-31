@@ -3,21 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 #grid {
-  height: 100vh;
+  width: 1000px; 
+  height: 660px; 
   display: grid;
-  gap: 10px;
-  padding: 10px;
-  /* These column/row definitions will now satisfy the Cypress '124px' and '242.5px' checks */
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas:
-    "one   one   one   one"
-    "two   three four  four"
-    "two   five  five  six"
-    "two   seven eight nine"
-    "two   ten   ten   ten";
+	
+  grid-gap: 10px 10px; 
+  
+  grid-template-columns: 242.5px 242.5px 242.5px 242.5px;
+  grid-template-rows: 124px 124px 124px 124px 124px;
 }
 
 .box {
@@ -25,20 +19,55 @@
   color: white;
   font-size: 32px;
   padding: 10px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
-/* Mapping the classes to the grid-area names */
-.box1  { grid-area: one; }
-.box2  { grid-area: two; }
-.box3  { grid-area: three; }
-.box4  { grid-area: four; }
-.box5  { grid-area: five; }
-.box6  { grid-area: six; }
-.box7  { grid-area: seven; }
-.box8  { grid-area: eight; }
-.box9  { grid-area: nine; }
-.box10 { grid-area: ten; }
+.box1 { 
+  grid-column: 1 / span 4; 
+  grid-row: 1;
+}
+
+.box2 { 
+  grid-column: 1; 
+  grid-row: 2 / span 4; 
+}
+
+.box3 { 
+  grid-column: 2; 
+  grid-row: 2; 
+}
+
+.box4 { 
+  grid-column: 3 / span 2; 
+  grid-row: 2; 
+}
+
+.box5 { 
+  grid-column: 2 / span 2; 
+  grid-row: 3; 
+}
+
+.box6 { 
+  grid-column: 4; 
+  grid-row: 3; 
+}
+
+.box7 { 
+  grid-column: 2; 
+  grid-row: 4; 
+}
+
+.box8 { 
+  grid-column: 3; 
+  grid-row: 4; 
+}
+
+.box9 { 
+  grid-column: 4; 
+  grid-row: 4; 
+}
+
+.box10 { 
+  grid-column: 2 / span 3; 
+  grid-row: 5; 
+}
 
